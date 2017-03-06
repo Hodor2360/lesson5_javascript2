@@ -7,8 +7,8 @@
       Project Title: Income Tax Calculator 
       Filename: index.html
 
-      Author: 
-      Date:   
+      Author: Christopher Hagerty
+      Date:   2/28/17
    -->
    <meta charset="utf-8" />
    <meta id="viewport" content="width=device-width, initial-scale=1.0">
@@ -87,7 +87,7 @@
             
              <fieldset id="calculationinfo">
                 <label>  
-                    <p id="taxEstimate">  </p>
+                    <p id="taxEstimates">  </p>
                     <p id="taxBracket">  </p>
                 </label>  
              </fieldset>
@@ -113,11 +113,12 @@
         
          var tax; //the tax calculated based on the filing status and income
          var taxRate; //the tax rate (bracket) based on the filing status and income
-         
+        
          //Retrieve the values the user enters and selects on the form
          document.getElementById("incomeInput").focus();
          var income = document.getElementById("incomeInput").value;
          var status = document.getElementById("filingStatus").value;
+         
          
          
          //Calculate the tax amount and tax rate based on the filing status and income
@@ -335,7 +336,7 @@
            * ************************************************************************************/
            
            
-          document.getElementById("taxEstimate").innerHTML = "Tax:  <b>$" + tax.toFixed(2) + "<b></br><br>";
+          document.getElementById("taxEstimates").innerHTML = "Tax:  <b>$" + tax.toFixed(2) + "<b></br><br>";
           
           document.getElementById("taxBracket").innerHTML = "Tax Bracket: <b>" + taxRate + "</b>%";
           
@@ -373,8 +374,8 @@
                 document.getElementById("filingStatus").selectedIndex = 0;
               
              //INSERT YOUR CODE BELOW
-                document.getElementById("taxEstimate").value = "";
-                document.getElementById("taxBracket").value = "";
+                document.getElementById("taxEstimates").innerHTML = "";
+                document.getElementById("taxBracket").innerHTML = "";
 
 
       }//end of clearButton function
